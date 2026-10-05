@@ -125,8 +125,8 @@ svg{display:block}
 .ms-div{height:1px;background:var(--n100);margin:4px 0}
 
 /* group block */
-.group{border:1px solid var(--n200);border-radius:8px;background:var(--surface);overflow:hidden}
-.group-head{display:flex;align-items:center;justify-content:space-between;background:var(--n50);padding:8px 12px}
+.group{border:1px solid var(--n200);border-radius:8px;background:var(--surface)}
+.group-head{display:flex;align-items:center;justify-content:space-between;background:var(--n50);padding:8px 12px;border-radius:7px 7px 0 0}
 .group-head .gl{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--n700)}
 .group-head .gl .badge{background:var(--n200)}
 .group-head .ga{display:flex;align-items:center;gap:2px;color:var(--n400)}
@@ -246,7 +246,7 @@ tbody td{font-size:14px;padding:11px 0;border-bottom:1px solid var(--n100)}
               <div class="ttl">Filters <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg></div>
               <div class="panel-actions">
                 <button class="icon-btn bordered" id="ctaBtn" title="Linked filters" aria-label="Linked filters">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2.5"/><path d="m10.2 6.3-3.9 3.9"/><circle cx="4.5" cy="12" r="2.5"/><path d="M7 12h10"/><circle cx="19.5" cy="12" r="2.5"/><path d="m13.8 17.7 3.9-3.9"/><circle cx="12" cy="19.5" r="2.5"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="17.5" r="3" fill="currentColor" stroke="none"/><circle cx="17.5" cy="6.5" r="3" fill="currentColor" stroke="none"/><path d="M6.5 14.5V10a3.5 3.5 0 0 1 3.5-3.5H13"/></svg>
                 </button>
                 <button class="add-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg> ADD</button>
                 <button class="icon-btn" title="Collapse panel" aria-label="Collapse panel">
@@ -366,7 +366,7 @@ function renderList(){
     if(slot===GROUP){
       html+='<div class="group" draggable="true" data-slot="'+GROUP+'">';
       html+='<div class="group-head"><div class="gl">Linked filters <span class="badge">'+S.linked.length+'</span></div>'+
-            '<div class="ga"><button data-edit="1" title="Edit">'+IC.pencil+'</button><button class="grip" style="opacity:1" title="Drag group">'+IC.grip+'</button></div></div>';
+            '<div class="ga"><button data-edit="1" title="Edit">'+IC.pencil+'</button></div></div>';
       html+='<div class="group-body">';
       S.linked.forEach(id=>{const c=(S.sel[id]||[]).length;
         html+='<div><div class="mlbl"><span class="name">'+byId(id).label+'</span>'+badge(c)+'</div>'+msHTML(id)+'</div>';});
